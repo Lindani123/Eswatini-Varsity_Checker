@@ -1,0 +1,404 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eswatini Tertiary & Scholarship Eligibility Checker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 min-h-screen py-8 px-4">
+    <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+        
+        <!-- Header -->
+        <div class="bg-blue-900 text-white p-6 text-center">
+            <h1 class="text-2xl font-bold">Eswatini Tertiary & Scholarship Pathfinder</h1>
+            <p class="text-blue-200 text-sm mt-1">Check points, qualifying degree/diploma courses, and government scholarship status across Eswatini institutions.</p>
+        </div>
+
+        <div class="p-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+            
+            <!-- Input Form Section -->
+            <div>
+                <h2 class="text-lg font-semibold text-slate-700 mb-4 border-b pb-2">Select Your Subject Grades (SGCSE/IGCSE)</h2>
+                <form id="gradeForm" class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                    
+                    <div>
+                        <label class="block font-medium text-slate-700 mb-1">Mathematics</label>
+                        <select id="math" class="grade-input w-full p-2 border rounded bg-slate-50">
+                            <option value="0">Select Grade</option>
+                            <option value="7">A* / A (7 pts)</option>
+                            <option value="6">B (6 pts)</option>
+                            <option value="5">C (5 pts - Credit)</option>
+                            <option value="4">D (4 pts)</option>
+                            <option value="3">E (3 pts - Pass)</option>
+                            <option value="0">F / G / U (Fail)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-medium text-slate-700 mb-1">English Language</label>
+                        <select id="english" class="grade-input w-full p-2 border rounded bg-slate-50">
+                            <option value="0">Select Grade</option>
+                            <option value="7">A* / A (7 pts)</option>
+                            <option value="6">B (6 pts)</option>
+                            <option value="5">C (5 pts - Credit)</option>
+                            <option value="4">D (4 pts)</option>
+                            <option value="3">E (3 pts - Pass)</option>
+                            <option value="0">F / G / U (Fail)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-medium text-slate-700 mb-1">siSwati</label>
+                        <select id="siswati" class="grade-input w-full p-2 border rounded bg-slate-50">
+                            <option value="0">Select Grade</option>
+                            <option value="7">A* / A (7 pts)</option><option value="6">B (6 pts)</option><option value="5">C (5 pts - Credit)</option><option value="4">D (4 pts)</option><option value="3">E (3 pts - Pass)</option><option value="0">F / G / U (Fail)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-medium text-slate-700 mb-1">French</label>
+                        <select id="french" class="grade-input w-full p-2 border rounded bg-slate-50">
+                            <option value="0">Select Grade</option>
+                            <option value="7">A* / A (7 pts)</option><option value="6">B (6 pts)</option><option value="5">C (5 pts - Credit)</option><option value="4">D (4 pts)</option><option value="3">E (3 pts - Pass)</option><option value="0">F / G / U (Fail)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-medium text-slate-700 mb-1">Literature in English</label>
+                        <select id="literature" class="grade-input w-full p-2 border rounded bg-slate-50">
+                            <option value="0">Select Grade</option>
+                            <option value="7">A* / A (7 pts)</option><option value="6">B (6 pts)</option><option value="5">C (5 pts - Credit)</option><option value="4">D (4 pts)</option><option value="3">E (3 pts - Pass)</option><option value="0">F / G / U (Fail)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-medium text-slate-700 mb-1">History</label>
+                        <select id="history" class="grade-input w-full p-2 border rounded bg-slate-50">
+                            <option value="0">Select Grade</option>
+                            <option value="7">A* / A (7 pts)</option><option value="6">B (6 pts)</option><option value="5">C (5 pts - Credit)</option><option value="4">D (4 pts)</option><option value="3">E (3 pts - Pass)</option><option value="0">F / G / U (Fail)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-medium text-slate-700 mb-1">Geography</label>
+                        <select id="geography" class="grade-input w-full p-2 border rounded bg-slate-50">
+                            <option value="0">Select Grade</option>
+                            <option value="7">A* / A (7 pts)</option><option value="6">B (6 pts)</option><option value="5">C (5 pts - Credit)</option><option value="4">D (4 pts)</option><option value="3">E (3 pts - Pass)</option><option value="0">F / G / U (Fail)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-medium text-slate-700 mb-1">Computer Studies / ICT</label>
+                        <select id="ict" class="grade-input w-full p-2 border rounded bg-slate-50">
+                            <option value="0">Select Grade</option>
+                            <option value="7">A* / A (7 pts)</option><option value="6">B (6 pts)</option><option value="5">C (5 pts - Credit)</option><option value="4">D (4 pts)</option><option value="3">E (3 pts - Pass)</option><option value="0">F / G / U (Fail)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-medium text-slate-700 mb-1">Accounting</label>
+                        <select id="accounting" class="grade-input w-full p-2 border rounded bg-slate-50">
+                            <option value="0">Select Grade</option>
+                            <option value="7">A* / A (7 pts)</option><option value="6">B (6 pts)</option><option value="5">C (5 pts - Credit)</option><option value="4">D (4 pts)</option><option value="3">E (3 pts - Pass)</option><option value="0">F / G / U (Fail)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-medium text-slate-700 mb-1">Agriculture</label>
+                        <select id="agriculture" class="grade-input w-full p-2 border rounded bg-slate-50">
+                            <option value="0">Select Grade</option>
+                            <option value="7">A* / A (7 pts)</option><option value="6">B (6 pts)</option><option value="5">C (5 pts - Credit)</option><option value="4">D (4 pts)</option><option value="3">E (3 pts - Pass)</option><option value="0">F / G / U (Fail)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-medium text-slate-700 mb-1">Biology / Life Sciences</label>
+                        <select id="biology" class="grade-input w-full p-2 border rounded bg-slate-50">
+                            <option value="0">Select Grade</option>
+                            <option value="7">A* / A (7 pts)</option><option value="6">B (6 pts)</option><option value="5">C (5 pts - Credit)</option><option value="4">D (4 pts)</option><option value="3">E (3 pts - Pass)</option><option value="0">F / G / U (Fail)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-medium text-slate-700 mb-1">Business Studies</label>
+                        <select id="business" class="grade-input w-full p-2 border rounded bg-slate-50">
+                            <option value="0">Select Grade</option>
+                            <option value="7">A* / A (7 pts)</option><option value="6">B (6 pts)</option><option value="5">C (5 pts - Credit)</option><option value="4">D (4 pts)</option><option value="3">E (3 pts - Pass)</option><option value="0">F / G / U (Fail)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-medium text-slate-700 mb-1">Design & Technology</label>
+                        <select id="dt" class="grade-input w-full p-2 border rounded bg-slate-50">
+                            <option value="0">Select Grade</option>
+                            <option value="7">A* / A (7 pts)</option><option value="6">B (6 pts)</option><option value="5">C (5 pts - Credit)</option><option value="4">D (4 pts)</option><option value="3">E (3 pts - Pass)</option><option value="0">F / G / U (Fail)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-medium text-slate-700 mb-1">Economics</label>
+                        <select id="economics" class="grade-input w-full p-2 border rounded bg-slate-50">
+                            <option value="0">Select Grade</option>
+                            <option value="7">A* / A (7 pts)</option><option value="6">B (6 pts)</option><option value="5">C (5 pts - Credit)</option><option value="4">D (4 pts)</option><option value="3">E (3 pts - Pass)</option><option value="0">F / G / U (Fail)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-medium text-slate-700 mb-1">Fashion & Fabric</label>
+                        <select id="fashion" class="grade-input w-full p-2 border rounded bg-slate-50">
+                            <option value="0">Select Grade</option>
+                            <option value="7">A* / A (7 pts)</option><option value="6">B (6 pts)</option><option value="5">C (5 pts - Credit)</option><option value="4">D (4 pts)</option><option value="3">E (3 pts - Pass)</option><option value="0">F / G / U (Fail)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-medium text-slate-700 mb-1">Food & Nutrition</label>
+                        <select id="food" class="grade-input w-full p-2 border rounded bg-slate-50">
+                            <option value="0">Select Grade</option>
+                            <option value="7">A* / A (7 pts)</option><option value="6">B (6 pts)</option><option value="5">C (5 pts - Credit)</option><option value="4">D (4 pts)</option><option value="3">E (3 pts - Pass)</option><option value="0">F / G / U (Fail)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-medium text-slate-700 mb-1">Physical Science</label>
+                        <select id="physical_science" class="grade-input w-full p-2 border rounded bg-slate-50">
+                            <option value="0">Select Grade</option>
+                            <option value="7">A* / A (7 pts)</option><option value="6">B (6 pts)</option><option value="5">C (5 pts - Credit)</option><option value="4">D (4 pts)</option><option value="3">E (3 pts - Pass)</option><option value="0">F / G / U (Fail)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block font-medium text-slate-700 mb-1">Religious Education</label>
+                        <select id="re" class="grade-input w-full p-2 border rounded bg-slate-50">
+                            <option value="0">Select Grade</option>
+                            <option value="7">A* / A (7 pts)</option><option value="6">B (6 pts)</option><option value="5">C (5 pts - Credit)</option><option value="4">D (4 pts)</option><option value="3">E (3 pts - Pass)</option><option value="0">F / G / U (Fail)</option>
+                        </select>
+                    </div>
+
+                    <div class="sm:col-span-2 mt-2">
+                        <button type="button" onclick="evaluateResults()" class="w-full bg-blue-600 text-white font-semibold py-2.5 rounded-md hover:bg-blue-700 transition">
+                            Evaluate Points & Check All Institutions
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Results Section -->
+            <div class="bg-slate-50 p-6 rounded-lg border flex flex-col justify-between">
+                <div>
+                    <h2 class="text-lg font-semibold text-slate-700 mb-3 border-b pb-2">Results & Eligibility Summary</h2>
+                    
+                    <div class="grid grid-cols-3 gap-2 mb-4 text-center">
+                        <div class="bg-white p-2 border rounded">
+                            <p class="text-[11px] text-slate-500">Best 6 Points</p>
+                            <p id="totalPoints" class="text-xl font-bold text-blue-700">0 pts</p>
+                        </div>
+                        <div class="bg-white p-2 border rounded">
+                            <p class="text-[11px] text-slate-500">Total Passes (E+)</p>
+                            <p id="passCount" class="text-xl font-bold text-slate-800">0</p>
+                        </div>
+                        <div class="bg-white p-2 border rounded">
+                            <p class="text-[11px] text-slate-500">Credits (C+)</p>
+                            <p id="creditCount" class="text-xl font-bold text-emerald-600">0</p>
+                        </div>
+                    </div>
+
+                    <!-- Scholarship Status Box -->
+                    <div class="bg-white p-3 border rounded mb-4 space-y-1">
+                        <p class="text-xs font-bold text-slate-700 uppercase tracking-wide">Govt. Scholarship (SLAS) Readiness:</p>
+                        <div id="scholarshipDegree" class="text-xs text-slate-600">🎓 <strong>Degree Level:</strong> <span class="text-slate-400">Pending calculation...</span></div>
+                        <div id="scholarshipDiploma" class="text-xs text-slate-600">📜 <strong>Diploma Level:</strong> <span class="text-slate-400">Pending calculation...</span></div>
+                    </div>
+
+                    <div>
+                        <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Qualifying Institutions & Programs:</p>
+                        <div id="courseList" class="space-y-2 text-xs max-h-80 overflow-y-auto pr-1">
+                            <p class="italic text-slate-400">Enter your grades and hit evaluate to check eligibility across all institutions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-[10px] text-slate-400 mt-4 border-t pt-2">
+                    * Minimum thresholds modeled on official requirements for Eswatini tertiary institutions and Ministry of Education & Training SLAS scholarship guidelines.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function evaluateResults() {
+            const inputs = document.querySelectorAll('.grade-input');
+            let scores = [];
+            let credits = 0;
+            let passes = 0;
+
+            let getVal = id => parseInt(document.getElementById(id).value);
+
+            let math = getVal('math');
+            let english = getVal('english');
+            let siswati = getVal('siswati');
+            let bio = getVal('biology');
+            let physci = getVal('physical_science');
+            let ict = getVal('ict');
+            let acc = getVal('accounting');
+            let bus = getVal('business');
+            let agri = getVal('agriculture');
+
+            inputs.forEach(input => {
+                let val = parseInt(input.value);
+                if (val > 0) {
+                    scores.push(val);
+                    if (val >= 3) passes++;
+                    if (val >= 5) credits++;
+                }
+            });
+
+            // Calculate Best 6 Points
+            scores.sort((a, b) => b - a);
+            let top6 = scores.slice(0, 6);
+            let totalPoints = top6.reduce((sum, current) => sum + current, 0);
+
+            // Update UI Counters
+            document.getElementById('totalPoints').innerText = `${totalPoints} pts`;
+            document.getElementById('passCount').innerText = `${passes} / 6`;
+            document.getElementById('creditCount').innerText = `${credits} Credits`;
+
+            // Government Scholarship (SLAS) Evaluation
+            let schDegree = document.getElementById('scholarshipDegree');
+            let schDiploma = document.getElementById('scholarshipDiploma');
+
+            // Degree Scholarship Criteria: 5 Credits minimum including English Credit
+            if (credits >= 5 && english >= 5) {
+                schDegree.innerHTML = `🎓 <strong>Degree Level:</strong> <span class="text-emerald-600 font-bold">✅ Meets Minimum Cut-off</span> (5+ Credits including English C or better)`;
+            } else {
+                schDegree.innerHTML = `🎓 <strong>Degree Level:</strong> <span class="text-rose-600 font-bold">❌ Below Cut-off</span> (Requires 5 Credits including English Language)`;
+            }
+
+            // Diploma Scholarship Criteria: 3 to 4 Credits including English Pass/Credit
+            if (credits >= 3 && english >= 3) {
+                schDiploma.innerHTML = `📜 <strong>Diploma Level:</strong> <span class="text-emerald-600 font-bold">✅ Meets Minimum Cut-off</span> (3+ Credits with English Pass/Credit)`;
+            } else {
+                schDiploma.innerHTML = `📜 <strong>Diploma Level:</strong> <span class="text-rose-600 font-bold">❌ Below Cut-off</span> (Requires at least 3 Credits & English Pass)`;
+            }
+
+            // Institution Qualification Engine
+            let courseListEl = document.getElementById('courseList');
+            courseListEl.innerHTML = '';
+            let qualifyList = [];
+
+            // 1. UNESWA
+            if (passes >= 6 && english >= 5 && credits >= 5) {
+                if (math >= 5 && (bio >= 5 || physci >= 5)) {
+                    qualifyList.push({ uni: "UNESWA", level: "Degree", program: "BSc Science / Agriculture / Consumer Science", req: "5 Credits incl. English, Math & Science" });
+                }
+                qualifyList.push({ uni: "UNESWA", level: "Degree", program: "BA Humanities / Social Science / B.Ed Secondary", req: "5 Credits incl. English" });
+            }
+
+            // 2. SANU (Southern Africa Nazarene University)
+            if (credits >= 5 && english >= 5) {
+                qualifyList.push({ uni: "SANU", level: "Degree", program: "BSc Nursing Science / Bachelor of Education / Theology", req: "5 Credits incl. English" });
+            }
+
+            // 3. EMCU (Eswatini Medical Christian University)
+            if (credits >= 5 && english >= 5 && math >= 5) {
+                if (bio >= 5 || physci >= 5) {
+                    qualifyList.push({ uni: "EMCU", level: "Degree", program: "BSc Nursing / Medical Lab / Radiography / Pharmacy", req: "5 Credits incl. Math & Science" });
+                }
+                if (ict >= 5 || math >= 5) {
+                    qualifyList.push({ uni: "EMCU", level: "Degree", program: "BSc Computer Science / Information Technology", req: "5 Credits incl. Math & ICT" });
+                }
+            }
+
+            // 4. LIMKOKWING UNIVERSITY
+            if (credits >= 3) {
+                qualifyList.push({ uni: "Limkokwing", level: "Diploma", program: "Associate Degree / Diploma in IT, Graphic Design, Film & TV", req: "3 Credits minimum" });
+            }
+            if (credits >= 5 && english >= 5) {
+                qualifyList.push({ uni: "Limkokwing", level: "Degree", program: "Degree in Business, Software Engineering, International Business", req: "5 Credits incl. English" });
+            }
+
+            // 5. WILLIAM PITCHER TEACHERS COLLEGE
+            if (passes >= 6 && credits >= 3 && english >= 5) {
+                qualifyList.push({ uni: "William Pitcher College", level: "Diploma", program: "Secondary Teacher's Diploma (STD)", req: "3+ Credits incl. English & Teaching Subject" });
+            }
+
+            // 6. NGWANE TEACHERS COLLEGE
+            if (passes >= 6 && credits >= 3 && english >= 3) {
+                qualifyList.push({ uni: "Ngwane Teachers College", level: "Diploma", program: "Primary Teacher's Diploma (PTD)", req: "3 Credits & English Pass" });
+            }
+
+            // 7. ECOT / SCOT (Eswatini College of Technology)
+            if (passes >= 6) {
+                if (math >= 5 && physci >= 5) {
+                    qualifyList.push({ uni: "ECOT (SCOT)", level: "Diploma", program: "Diploma in Engineering (Civil/Electrical/Mechanical) & ICT", req: "4 Credits incl. Math & Physical Science" });
+                }
+                if (acc >= 5 || bus >= 5 || english >= 5) {
+                    qualifyList.push({ uni: "ECOT (SCOT)", level: "Diploma", program: "Diploma in Business / Commercial Studies / Building", req: "3-4 Credits" });
+                }
+            }
+
+            // 8. GOOD SHEPHERD COLLEGE OF NURSING
+            if (credits >= 5 && english >= 5 && bio >= 5 && math >= 4) {
+                qualifyList.push({ uni: "Good Shepherd College", level: "Diploma / Degree", program: "Diploma in General Nursing / Midwifery", req: "5 Credits incl. English & Biology" });
+            }
+
+            // 9. IDM (Institute of Development Management)
+            if (credits >= 4 && english >= 5) {
+                qualifyList.push({ uni: "IDM Eswatini", level: "Diploma / Degree", program: "Degree & Diploma in Public Health, Project Mgmt, HR & Business", req: "4-5 Credits incl. English" });
+            }
+
+            // 10. BOTHO UNIVERSITY
+            if (credits >= 3) {
+                qualifyList.push({ uni: "Botho University", level: "Diploma", program: "Diploma in Computing / Business / Health Information", req: "3 Credits" });
+            }
+            if (credits >= 5 && english >= 5) {
+                qualifyList.push({ uni: "Botho University", level: "Degree", program: "BSc Computing / Accounting / Business Management", req: "5 Credits incl. English/Math" });
+            }
+
+            // 11. AMADI UNIVERSITY COLLEGE
+            if (credits >= 3) {
+                qualifyList.push({ uni: "AMADI University College", level: "Diploma / Degree", program: "Diploma & Degree in Business Administration, IT & Public Admin", req: "3 Credits (Diploma) / 5 Credits (Degree)" });
+            }
+
+            // 12. BRADFORD COLLEGE
+            if (credits >= 3) {
+                qualifyList.push({ uni: "Bradford College", level: "Diploma", program: "Diploma in Business Studies, Hospitality & Secretarial", req: "3 Credits" });
+            }
+
+            // 13. CIT (Christian University College / Center for ICT)
+            if (credits >= 3 && math >= 3) {
+                qualifyList.push({ uni: "CIT", level: "Diploma", program: "Diploma in Information Technology & Software Systems", req: "3 Credits incl. Math/English Pass" });
+            }
+
+            // 14. EMRC (Eswatini Medical & Rescue College)
+            if (credits >= 3 && bio >= 4) {
+                qualifyList.push({ uni: "EMRC", level: "Certificate / Diploma", program: "Emergency Medical Care / Paramedic & Trauma Diplomas", req: "3+ Credits incl. Science/Biology" });
+            }
+
+            // 15. REGENT BUSINESS SCHOOL
+            if (credits >= 5 && english >= 5) {
+                qualifyList.push({ uni: "Regent Business School", level: "Degree", program: "Bachelor of Commerce / Business Management / Supply Chain", req: "5 Credits incl. English" });
+            }
+
+            // 16. GWAMILE VOCTIM (Vocational & Commercial Training Institute)
+            if (passes >= 5) {
+                qualifyList.push({ uni: "Gwamile VOCTIM", level: "Craft Certificate / Diploma", program: "National Craft Cert / Diploma in Automotive, Electrical, Mechanical & Commercials", req: "3 Passes/Credits incl. Math/Science/Technical" });
+            }
+
+            // Render Output
+            if (qualifyList.length > 0) {
+                qualifyList.forEach(item => {
+                    let card = document.createElement('div');
+                    card.className = "p-2 bg-white rounded border border-slate-200 shadow-sm";
+                    card.innerHTML = `<div class="flex justify-between items-center mb-1"><span class="font-bold text-blue-900">${item.uni}</span><span class="text-[9px] px-1.5 py-0.5 rounded font-semibold ${item.level === 'Degree' ? 'bg-purple-100 text-purple-700' : 'bg-amber-100 text-amber-700'}">${item.level}</span></div><div class="font-medium text-slate-700">${item.program}</div><div class="text-[10px] text-slate-400">Req: ${item.req}</div>`;
+                    courseListEl.appendChild(card);
+                });
+            } else {
+                courseListEl.innerHTML = `<p class="text-rose-500 italic">No matching programs found yet. Enter your subject grades to evaluate.</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
